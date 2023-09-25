@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -23,4 +26,8 @@ public class Sport {
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
     private Olympiade olympiade;
+
+    @OneToMany(mappedBy ="sport")
+    private Set<Epreuve> lesEpreuves;
+
 }

@@ -1,0 +1,25 @@
+package bts.sio.api.model;
+
+import jakarta.persistence.*;
+import lombok.Data;
+
+    @Data
+    @Entity
+    @Table(name = "epreuve")
+    public class Epreuve {
+
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String nom ;
+
+        @ManyToOne
+        @JoinColumn(name = "sport_id")
+        private Sport sport;
+
+        @ManyToOne
+        @JoinColumn(name = "typeepreuve_id")
+        private TypeEpreuve typeEpreuve;
+    }
+
+
