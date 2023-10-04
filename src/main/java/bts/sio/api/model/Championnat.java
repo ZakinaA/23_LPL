@@ -1,5 +1,4 @@
 package bts.sio.api.model;
-
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -21,5 +20,7 @@ public class Championnat {
     @Column(name = "dateChampionnat")
     private String dateChampionnat;
 
+    @ManyToOne
+    private Palmares palmares;
 
 }
