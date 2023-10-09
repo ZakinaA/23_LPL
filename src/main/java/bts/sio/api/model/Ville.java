@@ -11,7 +11,9 @@ public class Ville {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name="nom")
+
+    @Column(name ="nom")
+
     private String nom ;
 
     @ManyToOne

@@ -18,8 +18,10 @@ public class Epreuve_Athlete {
 
     @ManyToOne
     @JoinColumn(name = "epreuve_id")
+
     private Epreuve epreuve;
-    @Column(name="place")
+    @Column(name ="place")
+
     private String place ;
 
 

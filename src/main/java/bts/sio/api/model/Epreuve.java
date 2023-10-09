@@ -11,18 +11,22 @@ import lombok.Data;
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-        @Column(name="libelle")
+
+
+        @Column(name ="libelle")
+
         private String nom ;
 
         @ManyToOne
         @JoinColumn(name = "sport_id")
         private Sport sport;
 
-            /*
+        private String nom ;
+
         @ManyToOne
-        @JoinColumn(name = "typeepreuve_id")
-        private TypeEpreuve typeEpreuve;
-        */
+        @JoinColumn(name = "sport_id")
+        private Sport sport;
+
 
     }
 
