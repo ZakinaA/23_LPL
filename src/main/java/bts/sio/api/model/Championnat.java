@@ -17,10 +17,11 @@ public class Championnat {
     @Column(name = "lieu")
     private String lieu;
 
-    @Column(name = "dateChampionnat")
+    @Column(name = "date_championnat")
     private String dateChampionnat;
 
     @ManyToOne
+
     private Palmares palmares;
 
 }

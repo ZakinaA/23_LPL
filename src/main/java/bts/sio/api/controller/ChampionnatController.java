@@ -26,7 +26,7 @@ public class ChampionnatController {
             return null;
         }
     }
-    @GetMapping("/championnat")
+    @GetMapping("/championnats")
     public Iterable<Championnat> getChampionnats() {
         return championnatService.getChampionnats();
     }
