@@ -1,6 +1,6 @@
 package bts.sio.api.controller;
-
 import bts.sio.api.model.Championnat;
+import bts.sio.api.model.Palmares;
 import bts.sio.api.service.ChampionnatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,6 @@ public class ChampionnatController {
     public Championnat createChampionnat(@RequestBody Championnat championnat) {
         return championnatService.saveChampionnat(championnat);
     }
-
     @GetMapping("/championnat/{id}")
     public Championnat getChampionnat(@PathVariable("id") final Long id) {
         Optional<Championnat> championnat = championnatService.getChampionnat(id);
@@ -27,12 +26,10 @@ public class ChampionnatController {
             return null;
         }
     }
-
-    @GetMapping("/championnat")
+    @GetMapping("/championnats")
     public Iterable<Championnat> getChampionnats() {
         return championnatService.getChampionnats();
     }
-
     @PutMapping("/championnat/{id}")
     public Championnat updateChampionnat(@PathVariable("id") final Long id, @RequestBody Championnat championnat) {
         Optional<Championnat> c = championnatService.getChampionnat(id);
@@ -41,31 +38,33 @@ public class ChampionnatController {
 
             String libelle = championnat.getLibelle();
             if (libelle != null) {
-                currentChampionnat.setLibelle(libelle);
+                currentChampionnat.setLibelle(libelle);;
             }
 
             String lieu = championnat.getLieu();
             if (lieu != null) {
-                currentChampionnat.setLieu(lieu);
+                currentChampionnat.setLieu(lieu);;
             }
 
             String dateChampionnat = championnat.getDateChampionnat();
             if (championnat != null) {
-                currentChampionnat.setDateChampionnat(dateChampionnat);
+                currentChampionnat.setDateChampionnat(dateChampionnat);;
+            }
+
+            Palmares palmares = championnat.getPalmares();
+            if(palmares != null){
+                currentChampionnat.setPalmares(palmares);;
             }
 
             championnatService.saveChampionnat(currentChampionnat);
-            return currentChampionnat:
+            return currentChampionnat;
         } else {
             return null;
 
         }
     }
-
     @DeleteMapping("/championnat/{id}")
     public void deleteChampionnat(@PathVariable("id") final Long id) {
         championnatService.deleteChampionnat(id);
     }
-
-
 }
