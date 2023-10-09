@@ -23,5 +23,7 @@ public class Palmares {
     @JoinColumn(name = "id_athlete")
     private Athlete athlete;
 
-
+    @ManyToOne
+    @JoinColumn(name = "id_Medaille")
+    private Medaille medaille;
 }
