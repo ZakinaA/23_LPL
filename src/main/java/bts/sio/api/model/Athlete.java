@@ -21,7 +21,9 @@ public class Athlete {
     private String prenom;
 
     @Column(name="date_naissance")
+
     private LocalDate date_naissance;
+
 
     @ManyToOne
     @JoinColumn(name = "pays_id")
