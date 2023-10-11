@@ -23,8 +23,8 @@ public class Athlete {
     @Column(name = "dateNaissance")
     private LocalDate dateNaissance;
 
-    @Column(name = "athleteImage")
-    private String athleteImage;
+    @Column(name = "image")
+    private String image;
 
     @ManyToOne
     @JoinColumn(name = "pays_id")
@@ -33,4 +33,5 @@ public class Athlete {
     @ManyToOne
     @JoinColumn(name = "sport_id")
     private Sport sport;
+
 }

@@ -78,9 +78,9 @@ public class AthleteController {
                 currentAthlete.setDateNaissance(dateNaissance);;
             }
 
-            String athleteImage = athlete.getAthleteImage();;
-            if(athleteImage != null) {
-                currentAthlete.setAthleteImage(athleteImage);
+            String image = athlete.getImage();
+            if(image != null) {
+               currentAthlete.setImage(image);;
             }
 
             Pays pays = athlete.getPays();
