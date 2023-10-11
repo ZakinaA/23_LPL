@@ -56,6 +56,9 @@ public class SportController {
             if(olympiade != null) {
                 currentSport.setOlympiade(olympiade);;
             }
+
+
+
             sportService.saveSport(currentSport);
             return currentSport;
         } else {

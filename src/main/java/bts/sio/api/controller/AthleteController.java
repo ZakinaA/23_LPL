@@ -83,6 +83,11 @@ public class AthleteController {
                 currentAthlete.setPays(pays);;
             }
 
+            Sport sport = athlete.getSport();
+            if(sport != null ){
+                currentAthlete.setSport(sport);
+            }
+
             athleteService.saveAthlete(currentAthlete);
             return currentAthlete;
         } else {
