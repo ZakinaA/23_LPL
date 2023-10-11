@@ -67,15 +67,17 @@ public class AthleteController {
             if(nom != null) {
                 currentAthlete.setNom(nom);
             }
+
             String prenom = athlete.getPrenom();
             if(prenom != null) {
                 currentAthlete.setPrenom(prenom);;
             }
-            LocalDate dateNaissance = athlete.getDateNaiss()
-            Sport sport = athlete.getSport();
-            if(sport != null) {
-                currentAthlete.setSport(sport);;
+
+            LocalDate dateNaissance = athlete.getDateNaissance();
+            if(dateNaissance != null) {
+                currentAthlete.setDateNaissance(dateNaissance);;
             }
+
             Pays pays = athlete.getPays();
             if(pays != null) {
                 currentAthlete.setPays(pays);;

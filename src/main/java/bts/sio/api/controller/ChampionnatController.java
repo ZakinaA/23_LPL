@@ -50,7 +50,7 @@ public class ChampionnatController {
                 currentChampionnat.setLieu(lieu);;
             }
 
-            String dateChampionnat = championnat.getDateChampionnat();
+            Integer dateChampionnat = championnat.getDateChampionnat();
             if (championnat != null) {
                 currentChampionnat.setDateChampionnat(dateChampionnat);;
             }

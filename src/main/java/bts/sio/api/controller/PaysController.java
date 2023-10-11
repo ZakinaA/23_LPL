@@ -20,6 +20,7 @@ public class PaysController {
      */
     @GetMapping("/pays")
     public Iterable<Pays> getAthletes() {
+
         return paysService.getLesPays();
     }
 }

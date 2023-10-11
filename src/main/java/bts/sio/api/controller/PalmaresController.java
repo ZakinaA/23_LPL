@@ -48,12 +48,16 @@ public class PalmaresController {
             if (athlete != null) {
                 currentPalmares.setAthlete(athlete);;
             }
+
             Medaille medaille = palmares.getMedaille();
             if (medaille != null){
                 currentPalmares.setMedaille(medaille);
             }
 
-
+            Championnat championnat = palmares.getChampionnat();
+            if (championnat != null) {
+                currentPalmares.setChampionnat(championnat);
+            }
 
 
             palmaresService.savePalmares(currentPalmares);
