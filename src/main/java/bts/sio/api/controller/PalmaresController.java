@@ -34,7 +34,7 @@ public class PalmaresController {
         if(c.isPresent()) {
             Palmares currentPalmares = c.get();
 
-            String annee = palmares.getAnnee();
+            Integer annee = palmares.getAnnee();
             if (annee != null) {
                 currentPalmares.setAnnee(annee);;
             }

@@ -11,13 +11,13 @@ public class Championnat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="libelle")
+    @Column(name = "libelle")
     private String libelle;
 
     @Column(name = "lieu")
     private String lieu;
 
     @Column(name = "dateChampionnat")
-    private String dateChampionnat;
+    private Integer dateChampionnat;
 
 }

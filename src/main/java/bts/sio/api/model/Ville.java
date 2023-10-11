@@ -12,12 +12,11 @@ public class Ville {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name ="nom")
-
-    private String nom ;
+    @Column(name = "nom")
+    private String nom;
 
     @ManyToOne
-    @JoinColumn(name = "id_Pays")
+    @JoinColumn(name = "pays_id")
     private Pays pays;
 
 }

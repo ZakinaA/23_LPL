@@ -17,6 +17,7 @@ public class ChampionnatController {
     public Championnat createChampionnat(@RequestBody Championnat championnat) {
         return championnatService.saveChampionnat(championnat);
     }
+
     @GetMapping("/championnat/{id}")
     public Championnat getChampionnat(@PathVariable("id") final Long id) {
         Optional<Championnat> championnat = championnatService.getChampionnat(id);
@@ -26,10 +27,13 @@ public class ChampionnatController {
             return null;
         }
     }
+
     @GetMapping("/championnats")
     public Iterable<Championnat> getChampionnats() {
+
         return championnatService.getChampionnats();
     }
+
     @PutMapping("/championnat/{id}")
     public Championnat updateChampionnat(@PathVariable("id") final Long id, @RequestBody Championnat championnat) {
         Optional<Championnat> c = championnatService.getChampionnat(id);
@@ -51,11 +55,6 @@ public class ChampionnatController {
                 currentChampionnat.setDateChampionnat(dateChampionnat);;
             }
 
-            Palmares palmares = championnat.getPalmares();
-            if(palmares != null){
-                currentChampionnat.setPalmares(palmares);;
-            }
-
             championnatService.saveChampionnat(currentChampionnat);
             return currentChampionnat;
         } else {
@@ -63,8 +62,10 @@ public class ChampionnatController {
 
         }
     }
+
     @DeleteMapping("/championnat/{id}")
     public void deleteChampionnat(@PathVariable("id") final Long id) {
+
         championnatService.deleteChampionnat(id);
     }
 }

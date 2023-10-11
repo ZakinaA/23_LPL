@@ -17,19 +17,17 @@ public class Sport {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="nom")
+    @Column(name = "nom")
     private String nom;
 
-    @Column(name="descriptif")
+    @Column(name = "descriptif")
     private String descriptif;
 
-
+    @Column(name = "nomImage")
+    private String nomImage;
 
     @ManyToOne
     @JoinColumn(name = "olympiade_id")
     private Olympiade olympiade;
-
-    @OneToMany(mappedBy ="sport")
-    private Set<Epreuve> lesEpreuves;
 
 }
