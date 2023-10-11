@@ -81,6 +81,11 @@ public class AthleteController {
                 currentAthlete.setSport(sport);;
             }
 
+            String athleteImage = athlete.getAthleteImage();;
+            if(athleteImage != null) {
+                currentAthlete.setAthleteImage(athleteImage);
+            }
+
             Pays pays = athlete.getPays();
             if(pays != null) {
                 currentAthlete.setPays(pays);;
