@@ -3,26 +3,29 @@ package bts.sio.api.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-    @Data
+import java.time.LocalDate;
+
+@Data
     @Entity
     @Table(name = "epreuve")
     public class Epreuve {
 
-        @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
-        @Column(name="libelle")
-        private String nom ;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-        @ManyToOne
-        @JoinColumn(name = "sport_id")
-        private Sport sport;
+    @Column(name = "libelle")
+    private String libelle ;
 
-            /*
-        @ManyToOne
-        @JoinColumn(name = "typeepreuve_id")
-        private TypeEpreuve typeEpreuve;
-        */
+    @Column(name = "date_debut")
+    private LocalDate dateDebut;
+
+    @Column(name = "date_fin")
+    private LocalDate dateFin;
+
+    @ManyToOne
+    @JoinColumn(name = "sport_id")
+    private Sport sport;
 
     }
 

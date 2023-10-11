@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import bts.sio.api.service.AthleteService;
 
+import java.time.LocalDate;
 import java.util.Optional;
 
 @RestController
@@ -70,6 +71,7 @@ public class AthleteController {
             if(prenom != null) {
                 currentAthlete.setPrenom(prenom);;
             }
+            LocalDate dateNaissance = athlete.getDateNaiss()
             Sport sport = athlete.getSport();
             if(sport != null) {
                 currentAthlete.setSport(sport);;

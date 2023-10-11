@@ -7,10 +7,12 @@ import lombok.Data;
 @Entity
 @Table(name = "pays")
 public class Pays {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="libelle")
-    private String nom;
+    @Column(name = "libelle")
+    private String libelle;
+
 }

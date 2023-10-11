@@ -29,4 +29,5 @@ public class Palmares {
     @ManyToOne
     @JoinColumn(name = "championnat_id")
     private Championnat championnat;
+
 }

@@ -20,15 +20,10 @@ public class Athlete {
     @Column(name="prenom")
     private String prenom;
 
-    @Column(name="date_naissance")
-    private LocalDate dateNaiss;
+    @Column(name = "dateNaissance")
+    private LocalDate dateNaissance;
 
     @ManyToOne
     @JoinColumn(name = "pays_id")
     private Pays pays;
-
-    @ManyToOne
-    @JoinColumn(name = "sport_id")
-    private Sport sport;
-
 }
