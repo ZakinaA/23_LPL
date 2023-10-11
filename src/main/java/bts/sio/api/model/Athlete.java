@@ -23,6 +23,9 @@ public class Athlete {
     @Column(name = "dateNaissance")
     private LocalDate dateNaissance;
 
+    @Column(name = "athleteImage")
+    private String athleteImage;
+
     @ManyToOne
     @JoinColumn(name = "pays_id")
     private Pays pays;
