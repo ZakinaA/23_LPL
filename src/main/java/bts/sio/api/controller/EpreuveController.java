@@ -1,9 +1,12 @@
 package bts.sio.api.controller;
 
 import bts.sio.api.model.Epreuve;
+import bts.sio.api.model.Sport;
 import bts.sio.api.service.EpreuveService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 import java.util.Optional;
 @RestController
 public class EpreuveController {
@@ -33,10 +36,26 @@ public class EpreuveController {
         if(e.isPresent()) {
             Epreuve currentEpreuve = e.get();
 
-            String nom = epreuve.getNom();
-            if(nom != null) {
-                currentEpreuve.setNom(nom);
+            String libelle = epreuve.getLibelle();
+            if(libelle != null) {
+                currentEpreuve.setLibelle(libelle);
             }
+
+            LocalDate dateDebut = epreuve.getDateDebut();
+            if (dateDebut != null) {
+                currentEpreuve.setDateDebut(dateDebut);
+            }
+
+            LocalDate dateFin = epreuve.getDateFin();
+            if(dateFin != null) {
+                currentEpreuve.setDateFin(dateFin);
+            }
+
+            Sport sport = epreuve.getSport();
+            if(sport != null) {
+                currentEpreuve.setSport(sport);
+            }
+
             epreuveService.saveEpreuve(currentEpreuve);
             return currentEpreuve;
         } else {
