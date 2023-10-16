@@ -1,6 +1,5 @@
 package bts.sio.api.controller;
 import bts.sio.api.model.*;
-import bts.sio.api.service.ChampionnatService;
 import bts.sio.api.service.PalmaresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,10 +8,11 @@ import java.util.Optional;
 @RestController
 
 public class PalmaresController {
+
     @Autowired
     private PalmaresService palmaresService;
     @PostMapping("/palmares")
-    public Palmares createChampionnat(@RequestBody Palmares palmares) {
+    public Palmares createPalmares(@RequestBody Palmares palmares) {
         return palmaresService.savePalmares(palmares);
     }
     @GetMapping("/palmares/{id}")
@@ -25,7 +25,7 @@ public class PalmaresController {
         }
     }
     @GetMapping("/palmaress")
-    public Iterable<Palmares> getPalmaress() {
+    public Iterable<Palmares> getLesPalmares() {
         return palmaresService.getLesPalmares();
     }
     @PutMapping("/palmares/{id}")
@@ -58,8 +58,6 @@ public class PalmaresController {
             if (championnat != null) {
                 currentPalmares.setChampionnat(championnat);
             }
-
-
             palmaresService.savePalmares(currentPalmares);
             return currentPalmares;
         } else {
@@ -69,6 +67,7 @@ public class PalmaresController {
     }
     @DeleteMapping("/palmares/{id}")
     public void deletePalmares(@PathVariable("id") final Long id) {
+
         palmaresService.deletePalmares(id);
     }
 }

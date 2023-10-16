@@ -15,17 +15,18 @@ public class PalmaresService {
     @Autowired
     private PalmaresRepository palmaresRepository;
 
-
-
     public Optional<Palmares> getPalmares(final Long id) {
+
         return palmaresRepository.findById(id);
     }
 
     public Iterable<Palmares> getLesPalmares() {
+
         return palmaresRepository.findAll();
     }
 
     public void deletePalmares(final Long id) {
+
         palmaresRepository.deleteById(id);
     }
 

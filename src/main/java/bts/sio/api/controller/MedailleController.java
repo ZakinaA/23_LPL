@@ -15,7 +15,7 @@ public class MedailleController {
     private MedailleService medailleService;
 
     /**
-     * Create - Add a new Medaille
+     * Create - Add a new medaille
      *
      * @param medaille An object medaille
      * @return The medaille object saved
@@ -43,7 +43,7 @@ public class MedailleController {
      * Read - Get all medaille
      * @return - An Iterable object of Medaille full filled
      */
-    @GetMapping("/medaille")
+    @GetMapping("/medailles")
     public Iterable<Medaille> getMedailles() {
         return medailleService.getMedailles();
     }
@@ -77,7 +77,7 @@ public class MedailleController {
      * Delete - Delete an medaille
      * @param id - The id of the medaille to delete
      */
-    @DeleteMapping("/Medaille/{id}")
+    @DeleteMapping("/medaille/{id}")
     public void deleteMedaille(@PathVariable("id") final Long id) {
         medailleService.deleteMedaille(id);
     }
