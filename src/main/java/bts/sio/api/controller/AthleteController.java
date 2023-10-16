@@ -40,7 +40,7 @@ public class AthleteController {
             return null;
         }
     }
-
+    
     /**
      * Read - Get all athletes
      * @return - An Iterable object of Athlete full filled
@@ -74,11 +74,6 @@ public class AthleteController {
             String prenom = athlete.getPrenom();
             if(prenom != null) {
                 currentAthlete.setPrenom(prenom);;
-            }
-
-            Sport sport = athlete.getSport();
-            if(sport != null) {
-                currentAthlete.setSport(sport);;
             }
 
             String image = athlete.getImage();
